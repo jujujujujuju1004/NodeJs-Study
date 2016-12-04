@@ -9,9 +9,8 @@ app.get('/', function(request, response) {
 app.get('/blocks', function(request, response) {
   var blocks = ['Fixed', 'Movable', 'Rotaling'];
   response.json(blocks);
-  response.redirect(301, '/parts');
 });
 
 app.listen(3000, function() {
-  console.log('Listening on port 3000');
+  console.log('Listening on port 3000 Node Study Server');
 });
