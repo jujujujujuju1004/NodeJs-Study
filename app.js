@@ -1,10 +1,19 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(request, response) {
+var logger = require('./logger');
+app.use(logger);
+
+app.use(express.static('public'));
+
+/*app.get('/', function(request, response) {
   response.send('Hello world');
   response.end();
-});
+});*/
+
+/*app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/public/index.html');
+});*/
 
 app.get('/blocks', function(request, response) {
   var blocks = ['Fixed', 'Movable', 'Rotaling'];
