@@ -16,7 +16,7 @@ app.get('/blocks/', function(request, response) {
   if (request.query.limit >= 0) {
     response.json(block.slice(0, request.query.limit));
   } else {
-    response.json(blocks);
+    response.json(Object.keys(blocks));
   }
 });
 
