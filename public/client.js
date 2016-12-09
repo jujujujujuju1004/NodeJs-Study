@@ -9,18 +9,19 @@ $(function(){
       list.push($('<li>', { html: content }));
     }
     $('.block-list').append(list);
-  }
+  };
 
   $('form').on('submit', function(event) {
     event.preventDefault();
     var form = $(this);
-    var blcokData = form.serialize();
+    var blockData = form.serialize();
 
     $.ajax({
-      type:'POST', url:'/blcok', data: blockData
-    }).done(function.(blockName) {
+      type:'POST', url:'/blocks', data: blockData
+    }).done(function(blockName) {
       appendToList([blockName]);
       form.trigger('reset');
     });
   });
+
 });
